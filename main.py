@@ -3,8 +3,17 @@
 
 import os
 
+
+def leave_sys():
+	leave = input('¿Desea continuar? (S / N): ').lower()
+	if leave == 's':
+		main()
+	else:
+		os._exit(0)
+
+
 def get_number():
-	number = input('Ingrese un número entero positivo: ')
+	number = input('Ingrese un número entero: ')
 	return number
 
 
@@ -12,16 +21,12 @@ def even_odd(number):
 	try:
 		number = int(number)
 		if (number % 2) == 0:
-			print(f'El número {number} es par')
+			print(f'El {number} es par')
 		else:
-			print(f'El número {number} es impar')
+			print(f'El {number} es impar')
 	except:
 		print('Entrada no válida')
-	leave = input('¿Desea continuar? (S / N): ').lower()
-	if leave == 's':
-		main()
-	else:
-		os._exit(0)
+	leave_sys()
 
 
 def main():
